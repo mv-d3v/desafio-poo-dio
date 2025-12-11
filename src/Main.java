@@ -1,21 +1,15 @@
-import br.com.dio.desafio.dominio.Bootcamp;
-import br.com.dio.desafio.dominio.Curso;
-import br.com.dio.desafio.dominio.Dev;
-import br.com.dio.desafio.dominio.Mentoria;
+import br.com.dio.desafio.dominio.*;
 
 import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-        Curso curso1 = new Curso();
-        curso1.setTitulo("curso java");
-        curso1.setDescricao("descrição curso java");
-        curso1.setCargaHoraria(8);
+        Tutor rogerioTutor = new Tutor("Rogério", 30);
+        Curso curso1 = new Curso("Curso Java", "descrição curso java", rogerioTutor, 15);
 
-        Mentoria mentoria = new Mentoria();
-        mentoria.setTitulo("mentoria de java");
-        mentoria.setDescricao("descrição mentoria java");
-        mentoria.setData(LocalDate.now());
+        Tutor robertoTutor = new Tutor("Roberto", 31);
+        LocalDate dataEvento = LocalDate.of(2025, 12, 20);
+        Mentoria mentoria = new Mentoria("Mentoria de java", "Descrição mentoria java", robertoTutor, dataEvento);
 
         Bootcamp bootcamp = new Bootcamp();
         bootcamp.setNome("CI&T - Backend com Java & AWS");
